@@ -1,5 +1,5 @@
 package models;
-import java.sql.Date;
+import java.util.Date;
 
 public class Visitante {
 	
@@ -17,7 +17,6 @@ public class Visitante {
 	private String telefone;
 	private String email;
 	private Date criadoEm;
-	
 	
 	public int getId() {
 		return id;
@@ -80,6 +79,10 @@ public class Visitante {
 		this.criadoEm = criadoEm;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Id: " + id + " | Nome: " + nome + " | Idade: " + idade + " | Altura: " + altura + " | Peso: " + peso + " | Cpf: " + cpf +
+			   " | Endereço: " + endereco + " | Telefone:" + telefone + " | Email: " + email + "| Criado em: " + criadoEm;
+	}
 
 }
