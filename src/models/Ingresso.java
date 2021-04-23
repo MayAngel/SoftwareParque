@@ -67,7 +67,7 @@ public class Ingresso {
 
 	@Override
 	public String toString() {
-		return "Id: " + id + " | QR : " + QRCode + " | Data da Compra: " + dataCompra + " | Valor do Ingresso: " + valorIngresso +
-			   " | Visitante: " + visitante + " | Lista de Atrações:" + listaAtracao + " | Parque: " + parque + "| Criado em: " + criadoEm;
+		return "Id: " + getId() + " | QR : " + getQRCode() + " | Data da Compra: " + getDataCompra() + " | Valor do Ingresso: " + getValorIngresso() +
+			   " | Visitante: " + getVisitante() + " | Lista de Atrações:" + getListaAtracao() + " | Parque: " + getParque() + "| Criado em: " + getCriadoEm();
 	}
 }

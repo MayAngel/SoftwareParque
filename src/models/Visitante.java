@@ -81,8 +81,9 @@ public class Visitante {
 	
 	@Override
 	public String toString() {
-		return "Id: " + id + " | Nome: " + nome + " | Idade: " + idade + " | Altura: " + altura + " | Peso: " + peso + " | Cpf: " + cpf +
-			   " | Endereço: " + endereco + " | Telefone:" + telefone + " | Email: " + email + "| Criado em: " + criadoEm;
+		return "Id: " + getId() + " | Nome: " + getNome() + " | Idade: " + getIdade() + " | Altura: " + getAltura() + 
+				" | Peso: " + getPeso() + " | Cpf: " + getCpf() + " | Endereço: " + getEndereco() + 
+				" | Telefone:" + getTelefone() + " | Email: " + getEmail() + "| Criado em: " + getCriadoEm();
 	}
 
 }
