@@ -12,7 +12,6 @@ public class CategoriaAtracao {
 	private String nome;
 	private String descricao;
 	private String restricao;
-	private Parque parque;
 	private Date criadoEm;
 	
 	public int getId() {
@@ -45,12 +44,6 @@ public class CategoriaAtracao {
 	public void setRestricao(String restricao) {
 		this.restricao = restricao;
 	}
-	public Parque getParque() {
-		return parque;
-	}
-	public void setParque(Parque parque) {
-		this.parque = parque;
-	}
 	public Date getCriadoEm() {
 		return criadoEm;
 	}
@@ -60,8 +53,8 @@ public class CategoriaAtracao {
 	
 	@Override
 	public String toString() {
-		return "Id: " + id + " | Nome: " + nome + " | Idade Mínima: " + idadeMinima + " | Descrição: " + descricao + 
-			   " | Restrições: " + restricao + " | Parque: " + parque + " | Criado em: " + criadoEm;
+		return "Id: " + getId() + " | Nome: " + getNome() + " | Idade Mínima: " + getIdadeMinima() + " | Descrição: " + getDescricao() + 
+			   " | Restrições: " + getRestricao() + " | Criado em: " + getCriadoEm();
 	}
 
 }
