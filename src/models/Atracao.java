@@ -1,17 +1,21 @@
 package models;
-
-import java.sql.Date;
+import java.util.Date;
 
 public class Atracao {
 	
-	int id;
-	int idadeMinima;
-	int alturaMinima;
-	int valor;
-	String nome;
-	String descricao;
-	String restricao;
-	CategoriaAtracao CategoriaAtracao;
+	public Atracao() {
+		this.criadoEm = new Date();
+	}
+	
+	private int id;
+	private int idadeMinima;
+	private int alturaMinima;
+	private int valor;
+	private String nome;
+	private String descricao;
+	private String restricao;
+	private CategoriaAtracao CategoriaAtracao;
+	private Date criadoEm;
 	
 	public int getId() {
 		return id;
@@ -60,6 +64,19 @@ public class Atracao {
 	}
 	public void setCategoriaAtracao(CategoriaAtracao categoriaAtracao) {
 		CategoriaAtracao = categoriaAtracao;
+	}
+	public Date getCriadoEm() {
+		return criadoEm;
+	}
+	public void setCriadoEm(Date criadoEm) {
+		this.criadoEm = criadoEm;
+	}
+	
+	@Override
+	public String toString() {
+		return "Id: " + id + "Nome: " + nome + " | Idade Mínima: " + idadeMinima + " | Altura Mínima" + alturaMinima + 
+		       " | Valor: " + valor + "| Descrição: " + descricao + " | Restrições: " + restricao + 
+		       " | Categoria da Atração: " + CategoriaAtracao + " | Criado em: " + criadoEm;
 	}
 	
 }

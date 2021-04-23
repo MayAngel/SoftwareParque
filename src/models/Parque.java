@@ -1,12 +1,12 @@
 package models;
+import java.util.Date;
 
 public class Parque {
 
-	public Parque() { //construtor
-		
+	public Parque() { 
+		this.criadoEm = new Date();
 	}
 
-	//Atributos
 	private int id;
 	private String nome;
 	private String cnpj;
@@ -14,8 +14,8 @@ public class Parque {
 	private int telefone;
 	private String email;
 	private String site;
+	private Date criadoEm;
 	
-	//Getters and Setters
 	public int getId() {
 		return id;
 	}
@@ -58,10 +58,17 @@ public class Parque {
 	public void setSite(String site) {
 		this.site = site;
 	}
+	public Date getCriadoEm() {
+		return criadoEm;
+	}
+	public void setCriadoEm(Date criadoEm) {
+		this.criadoEm = criadoEm;
+	}
 	
 	@Override
 	public String toString() {
-		return "Nome: " + nome + " | CNPJ: " + cnpj + " | Endereço: " + endereco + " | Telefone: " + telefone + " | Email: " + email + "| Site: " + site;
+		return "Nome: " + nome + " | CNPJ: " + cnpj + " | Endereço: " + endereco + 
+			   " | Telefone: " + telefone + " | Email: " + email + "| Site: " + site;
 	}
 	
 	
