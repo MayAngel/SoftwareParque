@@ -1,17 +1,14 @@
 package models;
-import java.util.Date;
+
+//import java.sql.Date;
 
 public class Servico {
 	
-	public Servico() {
-		this.criadoEm = new Date();
-	}
+	int id;
+	String tipo;
+	String nome;
+	String descricao;
 	
-	private int id;
-	private String tipo;
-	private String nome;
-	private String descricao;
-	private Date criadoEm;
 	
 	public int getId() {
 		return id;
@@ -37,15 +34,18 @@ public class Servico {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public Date getCriadoEm() {
-		return criadoEm;
-	}
-	public void setCriadoEm(Date criadoEm) {
-		this.criadoEm = criadoEm;
-	}
-
+	
+	
 	@Override
 	public String toString() {
-		return "Id: " + id + " | Nome: " + nome + " | Tipo: " + tipo + " | Descrição: " + descricao + " | Criado em: " + criadoEm;
+		return "ID:" + getId() + ", Tipo: " + getTipo() + ", Nome do serviço: " + getNome() + ", Descrição: " + getDescricao();
 	}
+	
+	
+	
+	
+	
+	
+	
+
 }
