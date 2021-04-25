@@ -12,7 +12,7 @@ public class CadastrarServico {
 	public static void renderizar() {
 		servico = new Servico();
 		System.out.println("\n".repeat(20));
-		System.out.println("\\n  --- Cadastrar Serviço ----  \\n");
+		System.out.println("\n  --- Cadastrar Serviço ---  \n");
 		System.out.println("Digite o tipo do serviço: ");	
 		servico.setTipo(sc.next());
 		System.out.println("Digite o nome do serviço: ");	

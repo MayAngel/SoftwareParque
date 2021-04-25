@@ -13,7 +13,9 @@ public class CadastrarParque {
 	public static void renderizar() {
 		parque = new Parque();
 		System.out.println("\n".repeat(20));
-		System.out.println("\\n  ---Cadastrar Parque----  \\n");
+		System.out.println("\n  --- Cadastrar Parque ---  \n");
+		System.out.println("Digite o id: ");
+		parque.setId(sc.nextInt());
 		System.out.println("Digite o nome do parque: ");	
 		parque.setNome(sc.next());	
 		System.out.println("Digite o CNPJ do parque: ");	
