@@ -1,10 +1,11 @@
 package controllers;
 
 import java.util.ArrayList;
-
 import models.Parque;
 
 public class ParqueController {
+	
+	private static Parque objeto;
 	
 	private static ArrayList<Parque> parques = new ArrayList<Parque>();
 
@@ -20,6 +21,17 @@ public class ParqueController {
 		}
 		parques.add(parque);
 		return true;
+	}
+	
+	public static Parque getParque(int id) {
+		for (Parque idParque : parques) {
+			if(idParque.getId() == id) {
+				objeto = idParque;
+			} else {
+				objeto = null;
+			}
+		}	
+		return objeto;
 	}
 	
 }
