@@ -3,12 +3,13 @@ package views;
 import java.util.Scanner;
 
 public class Principal {
-
+	
+	private static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 	
 		
-		int opcao;
-	 Scanner sc = new Scanner(System.in);
+	int opcao;
 	 Menu menu = new Menu();
 	 do {
 		menu.exibirMenu();		 
@@ -16,39 +17,33 @@ public class Principal {
 		opcao = sc.nextInt();		
 	
 		switch (opcao) {
-	//CadastrarVisitante Iasmin
 		case 1: 
-	//		CadastrarVisitante cadastrarVisitante = new CadastrarVisitante();
-	//		cadastrarVisitante.renderizar();			
-			break;
-	//CadastrarParque Wesley 	
+			CadastrarVisitante.renderizar();			
+			break;	
 		case 2: 
-			CadastrarParque cadastrarParque = new CadastrarParque();
-			cadastrarParque.renderizar();			
-			break;
-			
-	//CadastroAtracao Mayara		
+			CadastrarParque.renderizar();			
+			break;	
 		case 3: 
-			CadastrarAtracao cadastrarAtracao = new CadastrarAtracao();
-			cadastrarAtracao.renderizar();			
+			CadastrarAtracao.renderizar();			
 			break;
-			
-	//VendaIngresso A Definir quem vai fazer 
-		case 4: 
-	//		CadastrarParque cadastrarParque = new CadastrarParque();
-	//		cadastrarParque.renderizar();			
+		case 4: 	
+			CadastrarCategoriaAtracao.renderizar();
+			break; 
+		case 5: 	
+			CadastrarVendaIngresso.renderizar();
+			break;	
+		case 6: 	
+			ImprimirIngresso.renderizar();
 			break;
-			
-	//ImprimirIngresso A Definir quem vai fazer 
-		case 5: 
-	//		CadastrarParque cadastrarParque = new CadastrarParque();
-	//		cadastrarParque.renderizar();			
-			break;		
+		case 7: 	
+			CadastrarServico.renderizar();
+			break;
 		default:
 			System.out.println(opcao);		
 		break; 
 		}
 	} while (opcao!=0);
+	
 	 
 	 
 	 
