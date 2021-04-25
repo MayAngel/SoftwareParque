@@ -5,12 +5,11 @@ import models.CategoriaAtracao;
 public class CategoriaAtracaoController {
 	
 	private static ArrayList<CategoriaAtracao> categorias = new ArrayList<CategoriaAtracao>();
+	private static CategoriaAtracao objeto;
 	
 	public static ArrayList<CategoriaAtracao> listar() {
 		return categorias;
 	}
-	
-	private static CategoriaAtracao objeto;
 	
 	public static boolean cadastrar(CategoriaAtracao categoriaAtracao) {
 		for (CategoriaAtracao categoriaCadastrado : categorias) {
