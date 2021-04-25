@@ -10,6 +10,8 @@ public class CategoriaAtracaoController {
 		return categorias;
 	}
 	
+	private static CategoriaAtracao objeto;
+	
 	public static boolean cadastrar(CategoriaAtracao categoriaAtracao) {
 		for (CategoriaAtracao categoriaCadastrado : categorias) {
 			if(categoriaCadastrado.getNome().equals(categoriaAtracao.getNome())) {
@@ -18,6 +20,17 @@ public class CategoriaAtracaoController {
 		}
 		categorias.add(categoriaAtracao);
 		return true;
+	}
+
+	public static CategoriaAtracao getCategoriaAtracao(int id) {
+		for (CategoriaAtracao idCategoria : categorias) {
+			if(idCategoria.getId() == id) {
+				objeto = idCategoria;
+			} else {
+				objeto = null;
+			}
+		}	
+		return objeto;
 	}
 
 }

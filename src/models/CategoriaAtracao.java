@@ -51,10 +51,11 @@ public class CategoriaAtracao {
 		this.criadoEm = criadoEm;
 	}
 	
+	
+	
 	@Override
 	public String toString() {
-		return "Id: " + getId() + " | Nome: " + getNome() + " | Idade Mínima: " + getIdadeMinima() + " | Descrição: " + getDescricao() + 
-			   " | Restrições: " + getRestricao() + " | Criado em: " + getCriadoEm();
+		return "Id: " + getId() + " | Nome: " + getNome();
 	}
 
 }

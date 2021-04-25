@@ -14,6 +14,8 @@ public class CadastrarCategoriaAtracao {
 		categoriaAtracao = new CategoriaAtracao();
 		System.out.println("\n".repeat(20));
 		System.out.println("\\n  --- Cadastrar Categoria de Atrações ----  \\n");
+		System.out.println("Digite o id da Categoria: ");
+		categoriaAtracao.setId(sc.nextInt());
 		System.out.println("Digite o nome da categoria: ");	
 		categoriaAtracao.setNome(sc.next());	
 		System.out.println("Digite a descrição da categoria: ");	
@@ -22,7 +24,7 @@ public class CadastrarCategoriaAtracao {
 		categoriaAtracao.setIdadeMinima(sc.nextInt());
 		System.out.println("Digite a retrição da categoria: ");
 		categoriaAtracao.setRestricao(sc.next());
-			
+					
 		if(CategoriaAtracaoController.cadastrar(categoriaAtracao)) {
 			System.out.println("\n --- Categoria cadastrada com sucesso! ---");
 		} else {

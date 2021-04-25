@@ -2,10 +2,12 @@ package views;
 
 import java.util.Scanner;
 import controllers.AtracaoController;
+import controllers.CategoriaAtracaoController;
 import models.Atracao;
+import models.CategoriaAtracao;
 
 	public class CadastrarAtracao {
-	
+	private static CategoriaAtracao categoriaAtracao;
 	private static Atracao atracao;
 	private static Scanner sc = new Scanner(System.in);
 		
@@ -23,15 +25,22 @@ import models.Atracao;
 		atracao.setAlturaMinima(sc.nextInt());
 		System.out.println("Digite a retrição da Atração: ");
 		atracao.setRestricao(sc.next());
-		System.out.println("Digite a categoria da Atrações: ");
-		atracao.setCategoriaAtracao(sc.next()); // Ele tem que pegar uma categoria da lista de categorias
 		System.out.println("Digite o valor da Atração: ");
 		atracao.setValor(sc.nextInt());
+		System.out.println("Digite o número da categoria da Atrações: ");
+		ListarCategoriaAtracao.renderizar();
+		categoriaAtracao = CategoriaAtracaoController.getCategoriaAtracao(sc.nextInt());
+			if(categoriaAtracao != null) {
+				atracao.setCategoriaAtracao(categoriaAtracao);
+				if(AtracaoController.cadastrar(atracao)) {
+					System.out.println("\n --- Atração cadastrada com sucesso! ---");
+				} else {
+					System.out.println(" --- Atração já existente! ---");
+				}
+			} else { 
+				System.out.println("\n --- Essa categoria não existe! --- ");
+				System.out.println("\n --- Não foi possivel cadastrar essa atração!!! --- ");
+			}
 			
-		if(AtracaoController.cadastrar(atracao)) {
-			System.out.println("\n --- Atração cadastrada com sucesso! ---");
-		} else {
-			System.out.println(" --- Atração já existente! ---");
-		}
 	}
 }
