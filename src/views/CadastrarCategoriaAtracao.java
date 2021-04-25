@@ -1,11 +1,15 @@
 package views;
 
 import java.util.Scanner;
+
+import controllers.ParqueController;
 import controllers.CategoriaAtracaoController;
 import models.CategoriaAtracao;
+import models.Parque;
 
 public class CadastrarCategoriaAtracao {
 	
+	private static Parque parque;
 	private static CategoriaAtracao categoriaAtracao;
 	private static Scanner sc = new Scanner(System.in);
 
@@ -13,7 +17,7 @@ public class CadastrarCategoriaAtracao {
 		
 		categoriaAtracao = new CategoriaAtracao();
 		System.out.println("\n".repeat(20));
-		System.out.println("\\n  --- Cadastrar Categoria de Atrações ----  \\n");
+		System.out.println("\n  --- Cadastrar Categoria de Atrações ---  \n");
 		System.out.println("Digite o id da Categoria: ");
 		categoriaAtracao.setId(sc.nextInt());
 		System.out.println("Digite o nome da categoria: ");	
@@ -24,11 +28,19 @@ public class CadastrarCategoriaAtracao {
 		categoriaAtracao.setIdadeMinima(sc.nextInt());
 		System.out.println("Digite a retrição da categoria: ");
 		categoriaAtracao.setRestricao(sc.next());
-					
-		if(CategoriaAtracaoController.cadastrar(categoriaAtracao)) {
-			System.out.println("\n --- Categoria cadastrada com sucesso! ---");
-		} else {
-			System.out.println(" --- Essa categoria já existe! ---");
-		}
+		System.out.println("Digite o número do parque: ");
+		Listar.renderizarParque();
+		parque = ParqueController.getParque(sc.nextInt());
+			if(parque != null) {
+				categoriaAtracao.setParque(parque);
+				if(CategoriaAtracaoController.cadastrar(categoriaAtracao)) {
+					System.out.println("\n --- Categoria cadastrada com sucesso! ---");
+				} else {
+					System.out.println(" --- Essa categoria já existe! ---");
+				}
+			} else { 
+				System.out.println("\n --- Esse parque não existe! --- ");
+				System.out.println("\n --- Não foi possivel cadastrar essa categoria!!! --- ");
+			}
 	}
 }
