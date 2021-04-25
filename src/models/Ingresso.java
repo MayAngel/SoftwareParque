@@ -7,32 +7,18 @@ public class Ingresso {
 		this.criadoEm = new Date();
 	}
 	
-	private int id;
 	private int QRCode;
-	private char dataCompra;
 	private float valorIngresso;
 	private Visitante visitante;
-	private Atracao listaAtracao;
-	private Parque parque; 
+	private Atracao atracao;
+	private Parque parque;
 	private Date criadoEm;
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public int getQRCode() {
 		return QRCode;
 	}
 	public void setQRCode(int qRCode) {
 		QRCode = qRCode;
-	}
-	public char getDataCompra() {
-		return dataCompra;
-	}
-	public void setDataCompra(char dataCompra) {
-		this.dataCompra = dataCompra;
 	}
 	public float getValorIngresso() {
 		return valorIngresso;
@@ -46,11 +32,11 @@ public class Ingresso {
 	public void setVisitante(Visitante visitante) {
 		this.visitante = visitante;
 	}
-	public Atracao getListaAtracao() {
-		return listaAtracao;
+	public Atracao getAtracao() {
+		return atracao;
 	}
-	public void setListaAtracao(Atracao listaAtracao) {
-		this.listaAtracao = listaAtracao;
+	public void setAtracao(Atracao listaAtracao) {
+		this.atracao = listaAtracao;
 	}
 	public Parque getParque() {
 		return parque;
@@ -67,7 +53,7 @@ public class Ingresso {
 
 	@Override
 	public String toString() {
-		return "Id: " + getId() + " | QR : " + getQRCode() + " | Data da Compra: " + getDataCompra() + " | Valor do Ingresso: " + getValorIngresso() +
-			   " | Visitante: " + getVisitante() + " | Lista de Atrações:" + getListaAtracao() + " | Parque: " + getParque() + "| Criado em: " + getCriadoEm();
+		return " | QR : " + getQRCode() + " | Valor do Ingresso: R$" + getValorIngresso() + " | Visitante: " + getVisitante() + 
+			   " | Lista de Atrações:" + getAtracao() + " | Parque: " + getParque() + "| Criado em: " + getCriadoEm();
 	}
 }
