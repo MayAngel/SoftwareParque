@@ -12,6 +12,7 @@ public class CategoriaAtracao {
 	private String nome;
 	private String descricao;
 	private String restricao;
+	private Parque parque;
 	private Date criadoEm;
 	
 	public int getId() {
@@ -50,12 +51,16 @@ public class CategoriaAtracao {
 	public void setCriadoEm(Date criadoEm) {
 		this.criadoEm = criadoEm;
 	}
-	
-	
+	public Parque getParque() {
+		return parque;
+	}
+	public void setParque(Parque parque) {
+		this.parque = parque;
+	}
 	
 	@Override
 	public String toString() {
-		return "Id: " + getId() + " | Nome: " + getNome();
+		return getId() + " - " + getNome();
 	}
 
 }
