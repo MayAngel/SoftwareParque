@@ -67,8 +67,7 @@ public class Parque {
 	
 	@Override
 	public String toString() {
-		return "Nome: " + nome + " | CNPJ: " + cnpj + " | Endereço: " + endereco + 
-			   " | Telefone: " + telefone + " | Email: " + email + "| Site: " + site;
+		return getId() + " - " + getNome();
 	}
 	
 	

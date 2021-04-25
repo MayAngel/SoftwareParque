@@ -9,8 +9,8 @@ public class Visitante {
 	
 	private int id;
 	private int idade;
-	private int altura;
-	private int peso;
+	private double altura;
+	private double peso;
 	private String nome;
 	private String cpf;
 	private String endereco;
@@ -30,16 +30,16 @@ public class Visitante {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-	public int getAltura() {
+	public double getAltura() {
 		return altura;
 	}
-	public void setAltura(int altura) {
+	public void setAltura(double altura) {
 		this.altura = altura;
 	}
-	public int getPeso() {
+	public double getPeso() {
 		return peso;
 	}
-	public void setPeso(int peso) {
+	public void setPeso(double peso) {
 		this.peso = peso;
 	}
 	public String getNome() {
@@ -81,9 +81,7 @@ public class Visitante {
 	
 	@Override
 	public String toString() {
-		return "Id: " + getId() + " | Nome: " + getNome() + " | Idade: " + getIdade() + " | Altura: " + getAltura() + 
-				" | Peso: " + getPeso() + " | Cpf: " + getCpf() + " | Endereço: " + getEndereco() + 
-				" | Telefone:" + getTelefone() + " | Email: " + getEmail() + "| Criado em: " + getCriadoEm();
+		return getId() + " - " + getNome();
 	}
 
 }

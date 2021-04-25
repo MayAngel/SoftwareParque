@@ -9,8 +9,8 @@ public class Atracao {
 	
 	private int id;
 	private int idadeMinima;
-	private int alturaMinima;
-	private int valor;
+	private double alturaMinima;
+	private double valor;
 	private String nome;
 	private String descricao;
 	private String restricao;
@@ -29,16 +29,16 @@ public class Atracao {
 	public void setIdadeMinima(int idadeMinima) {
 		this.idadeMinima = idadeMinima;
 	}
-	public int getAlturaMinima() {
+	public double getAlturaMinima() {
 		return alturaMinima;
 	}
-	public void setAlturaMinima(int alturaMinima) {
+	public void setAlturaMinima(double alturaMinima) {
 		this.alturaMinima = alturaMinima;
 	}
-	public int getValor() {
+	public double getValor() {
 		return valor;
 	}
-	public void setValor(int valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
 	}
 	public String getNome() {
@@ -75,7 +75,7 @@ public class Atracao {
 	@Override
 	public String toString() {
 		return "Id: " + getId() + "Nome: " + getNome() + " | Idade Mínima: " + getIdadeMinima() + " | Altura Mínima" + getAlturaMinima() + 
-		       " | Valor: " + getValor() + "| Descrição: " + getDescricao() + " | Restrições: " + getRestricao() + 
+		       " | Valor: R$" + getValor() + "| Descrição: " + getDescricao() + " | Restrições: " + getRestricao() + 
 		       " | Categoria da Atração: " + getCategoriaAtracao() + " | Criado em: " + getCriadoEm();
 	}
 	
