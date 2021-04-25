@@ -14,7 +14,7 @@ import models.CategoriaAtracao;
 		
 	public static void renderizar() {
 		atracao = new Atracao();
-		System.out.println("\n".repeat(20));
+		System.out.println("\n".repeat(2));
 		System.out.println("\n  --- Cadastrar Atração ---  \n");
 		System.out.println("Digite o id da Atração: ");
 		atracao.setId(sc.nextInt());

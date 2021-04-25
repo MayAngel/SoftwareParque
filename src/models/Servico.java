@@ -4,10 +4,11 @@ package models;
 
 public class Servico {
 	
-	int id;
-	String tipo;
-	String nome;
-	String descricao;
+	private int id;
+	private String tipo;
+	private String nome;
+	private String descricao;
+	private Parque parque;
 	
 	
 	public int getId() {
@@ -34,8 +35,13 @@ public class Servico {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	
+		
+	public Parque getParque() {
+		return parque;
+	}
+	public void setParque(Parque parque) {
+		this.parque = parque;
+	}
 	@Override
 	public String toString() {
 		return "ID:" + getId() + ", Tipo: " + getTipo() + ", Nome do serviço: " + getNome() + ", Descrição: " + getDescricao();

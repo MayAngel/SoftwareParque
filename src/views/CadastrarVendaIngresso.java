@@ -21,7 +21,7 @@ public class CadastrarVendaIngresso {
 	
 	public static void renderizar() {
 		ingresso = new Ingresso();
-		System.out.println("\n".repeat(20));
+		System.out.println("\n".repeat(2));
 		System.out.println("\n  --- Venda de Ingresso ---  \n");
 		System.out.println("Digite o QR Code do ingresso: ");
 		ingresso.setQRCode(sc.nextInt());

@@ -74,9 +74,7 @@ public class Atracao {
 	
 	@Override
 	public String toString() {
-		return "Id: " + getId() + "Nome: " + getNome() + " | Idade Mínima: " + getIdadeMinima() + " | Altura Mínima" + getAlturaMinima() + 
-		       " | Valor: R$" + getValor() + "| Descrição: " + getDescricao() + " | Restrições: " + getRestricao() + 
-		       " | Categoria da Atração: " + getCategoriaAtracao() + " | Criado em: " + getCriadoEm();
+		return getId() + " - " + getNome();
 	}
 	
 }

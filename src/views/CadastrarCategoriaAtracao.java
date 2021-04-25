@@ -16,7 +16,7 @@ public class CadastrarCategoriaAtracao {
 	public static void renderizar() {
 		
 		categoriaAtracao = new CategoriaAtracao();
-		System.out.println("\n".repeat(20));
+		System.out.println("\n".repeat(2));
 		System.out.println("\n  --- Cadastrar Categoria de Atrações ---  \n");
 		System.out.println("Digite o id da Categoria: ");
 		categoriaAtracao.setId(sc.nextInt());

@@ -11,8 +11,10 @@ import models.Visitante;
 		
 	public static void renderizar() {
 		visitante = new Visitante();
-		System.out.println("\n".repeat(20));
+		System.out.println("\n".repeat(2));
 		System.out.println("\n  --- Cadastrar Visitante ---  \n");
+		System.out.println("Digite o id do visitante: ");
+		visitante.setId(sc.nextInt());
 		System.out.println("Digite o nome do visitante: ");	
 		visitante.setNome(sc.next());	
 		System.out.println("Digite o Cpf do visitante: ");	
