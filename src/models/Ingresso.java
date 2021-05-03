@@ -1,4 +1,5 @@
 package models;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Ingresso {
@@ -10,7 +11,7 @@ public class Ingresso {
 	private int QRCode;
 	private float valorIngresso;
 	private Visitante visitante;
-	private Atracao atracao;
+	private ArrayList<Atracao> atracoes;
 	private Parque parque;
 	private Date criadoEm;
 	
@@ -32,11 +33,12 @@ public class Ingresso {
 	public void setVisitante(Visitante visitante) {
 		this.visitante = visitante;
 	}
-	public Atracao getAtracao() {
-		return atracao;
+	
+	public ArrayList<Atracao> getAtracoes() {
+		return atracoes;
 	}
-	public void setAtracao(Atracao listaAtracao) {
-		this.atracao = listaAtracao;
+	public void setAtracoes(ArrayList<Atracao> atracoes) {
+		this.atracoes = atracoes;
 	}
 	public Parque getParque() {
 		return parque;
@@ -54,6 +56,6 @@ public class Ingresso {
 	@Override
 	public String toString() {
 		return " | QR : " + getQRCode() + " | Valor do Ingresso: R$" + getValorIngresso() + " | Visitante: " + getVisitante() + 
-			   " | Lista de Atrações:" + getAtracao() + " | Parque: " + getParque() + "| Criado em: " + getCriadoEm();
+			   " | Lista de Atrações:" + getAtracoes() + " | Parque: " + getParque() + "| Criado em: " + getCriadoEm();
 	}
 }

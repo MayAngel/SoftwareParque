@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Principal {
 	
-	private static Scanner sc;
-
 	public static void main(String[] args) {
-	sc = new Scanner(System.in);
+	@SuppressWarnings("resource")
+	Scanner sc = new Scanner(System.in);
+	
 		
 	int opcao;
 	 Menu menu = new Menu();
@@ -43,9 +43,5 @@ public class Principal {
 		break; 
 		}
 	} while (opcao!=0);
-	 
 	}
-	
-	
-
 }
