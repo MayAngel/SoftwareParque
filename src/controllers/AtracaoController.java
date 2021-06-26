@@ -1,18 +1,31 @@
 package controllers;
 
 import java.util.ArrayList;
-import models.Atracao;
 
-public class AtracaoController {
+import Interfaces.IAtracao;
+import models.Atracao;
+import models.Ingresso;
+
+public class AtracaoController implements IAtracao{
 	
-	private static ArrayList<Atracao> atracoes = new ArrayList<Atracao>();
+	//Singleton
+			private static AtracaoController controller;	
+			public static  AtracaoController retornarInstancia() {
+				if(controller  == null) {
+					controller = new AtracaoController();
+				}
+				return controller;
+			}
+			
+			
+	private ArrayList<Atracao> atracoes = new ArrayList<Atracao>();
 	private  static Atracao objeto;
-	
-	public static ArrayList<Atracao> listar() {
+	@Override
+	public ArrayList<Atracao> listar() {
 		return atracoes;
 	}
-	
-	public static boolean cadastrar(Atracao atracao) {
+	@Override
+	public boolean cadastrar(Atracao atracao) {
 		for (Atracao atracaoCadastrado : atracoes) {
 			if(atracaoCadastrado.getNome().equals(atracao.getNome())) {
 				return false;
@@ -21,8 +34,8 @@ public class AtracaoController {
 		atracoes.add(atracao);
 		return true;
 	}
-	
-	public static Atracao getAtracao(int num) {
+	@Override
+	public Atracao getAtracao(int num) {
 		for (Atracao idAtracao : atracoes) {
 			if(idAtracao.getId() == num) {
 				objeto = idAtracao;
@@ -32,5 +45,6 @@ public class AtracaoController {
 		}	
 		return objeto;
 	}
-
+	
+	
 }

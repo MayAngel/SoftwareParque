@@ -9,10 +9,11 @@ public class CadastrarParque {
 	
 	private static Parque parque;
 	private static Scanner sc = new Scanner(System.in);
+	private static ParqueController parqueController = ParqueController.retornarInstancia();
 	
 	public static void renderizar() {
 		parque = new Parque();
-		System.out.println("\n".repeat(2));
+		System.out.println("\n".repeat(1));
 		System.out.println("\n  --- Cadastrar Parque ---  \n");
 		System.out.println("Digite o id: ");
 		parque.setId(sc.nextInt());
@@ -30,7 +31,7 @@ public class CadastrarParque {
 		parque.setSite(sc.next());
 		
 		
-		if(ParqueController.cadastrar(parque)) {
+		if(parqueController.cadastrar(parque)) {
 			System.out.println("\n ---Parque cadastrado com sucesso!!! ---");
 		} else {
 			System.out.println("Esse parque já esta cadastrado!");

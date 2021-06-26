@@ -1,17 +1,27 @@
 package controllers;
 import java.util.ArrayList;
+
+import Interfaces.ICategoria;
 import models.CategoriaAtracao;
 
-public class CategoriaAtracaoController {
-	
-	private static ArrayList<CategoriaAtracao> categorias = new ArrayList<CategoriaAtracao>();
+public class CategoriaAtracaoController implements ICategoria{
+	//Singleton
+	private static CategoriaAtracaoController controller;	
+	public static  CategoriaAtracaoController retornarInstancia() {
+		if(controller  == null) {
+			controller = new CategoriaAtracaoController();
+		}
+		return controller;
+	}	
 	private static CategoriaAtracao objeto;
+	private static ArrayList<CategoriaAtracao> categorias = new ArrayList<CategoriaAtracao>();
 	
-	public static ArrayList<CategoriaAtracao> listar() {
+	@Override
+	public ArrayList<CategoriaAtracao> listar() {
 		return categorias;
 	}
-	
-	public static boolean cadastrar(CategoriaAtracao categoriaAtracao) {
+	@Override
+	public boolean cadastrar(CategoriaAtracao categoriaAtracao) {
 		for (CategoriaAtracao categoriaCadastrado : categorias) {
 			if(categoriaCadastrado.getNome().equals(categoriaAtracao.getNome())) {
 				return false;
@@ -20,8 +30,8 @@ public class CategoriaAtracaoController {
 		categorias.add(categoriaAtracao);
 		return true;
 	}
-
-	public static CategoriaAtracao getCategoriaAtracao(int id) {
+	@Override
+	public CategoriaAtracao getCategoriaAtracao(int id) {
 		for (CategoriaAtracao idCategoria : categorias) {
 			if(idCategoria.getId() == id) {
 				objeto = idCategoria;
@@ -30,6 +40,5 @@ public class CategoriaAtracaoController {
 			}
 		}	
 		return objeto;
-	}
-
+	}	
 }

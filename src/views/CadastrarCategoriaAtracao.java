@@ -3,6 +3,7 @@ package views;
 import java.util.Scanner;
 
 import controllers.ParqueController;
+import controllers.AtracaoController;
 import controllers.CategoriaAtracaoController;
 import models.CategoriaAtracao;
 import models.Parque;
@@ -12,11 +13,13 @@ public class CadastrarCategoriaAtracao {
 	private static Parque parque;
 	private static CategoriaAtracao categoriaAtracao;
 	private static Scanner sc = new Scanner(System.in);
-
+	private static ParqueController parqueController = ParqueController.retornarInstancia();
+	private static CategoriaAtracaoController categoriaAtracaoController = CategoriaAtracaoController.retornarInstancia();
+	
 	public static void renderizar() {
 		
 		categoriaAtracao = new CategoriaAtracao();
-		System.out.println("\n".repeat(2));
+		System.out.println("\n".repeat(1));
 		System.out.println("\n  --- Cadastrar Categoria de Atrações ---  \n");
 		System.out.println("Digite o id da Categoria: ");
 		categoriaAtracao.setId(sc.nextInt());
@@ -24,23 +27,24 @@ public class CadastrarCategoriaAtracao {
 		categoriaAtracao.setNome(sc.next());	
 		System.out.println("Digite a descrição da categoria: ");	
 		categoriaAtracao.setDescricao(sc.next());
-		System.out.println("Digite a idade mínima da categoria: ");
+		System.out.println("Digite a idade mínima para utilização nessa categoria: ");
 		categoriaAtracao.setIdadeMinima(sc.nextInt());
-		System.out.println("Digite a retrição da categoria: ");
+		System.out.println("Digite a restrição da categoria(restrições físicas): ");
 		categoriaAtracao.setRestricao(sc.next());
 		System.out.println("Digite o número do parque: ");
 		Listar.renderizarParque();
-		parque = ParqueController.getParque(sc.nextInt());
+		parque = parqueController.getParque(sc.nextInt());
 			if(parque != null) {
 				categoriaAtracao.setParque(parque);
-				if(CategoriaAtracaoController.cadastrar(categoriaAtracao)) {
+				if(categoriaAtracaoController.cadastrar(categoriaAtracao)) {
 					System.out.println("\n --- Categoria cadastrada com sucesso! ---");
 				} else {
 					System.out.println(" --- Essa categoria já existe! ---");
 				}
 			} else { 
-				System.out.println("\n --- Esse parque não existe! --- ");
-				System.out.println("\n --- Não foi possivel cadastrar essa categoria!!! --- ");
+				System.out.println("\n --- Parque ainda não cadastrado! --- ");
+				System.out.println("\n --- Não foi possivel cadastrar essa categoria de Atração!!! --- ");
+				System.out.println("\n --- Você precisa primeiro cadastrar o Parque! --- ");
 			}
 	}
 }

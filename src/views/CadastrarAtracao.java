@@ -3,6 +3,7 @@ package views;
 import java.util.Scanner;
 import controllers.AtracaoController;
 import controllers.CategoriaAtracaoController;
+import controllers.VendaIngressoController;
 import models.Atracao;
 import models.CategoriaAtracao;
 
@@ -11,10 +12,13 @@ import models.CategoriaAtracao;
 	private static CategoriaAtracao categoriaAtracao;
 	private static Atracao atracao;
 	private static Scanner sc = new Scanner(System.in);
-		
+	private static CategoriaAtracaoController categoriaAtracaoController = CategoriaAtracaoController.retornarInstancia();
+	
+	private static AtracaoController atracaoController = AtracaoController.retornarInstancia();	
+	
 	public static void renderizar() {
 		atracao = new Atracao();
-		System.out.println("\n".repeat(2));
+		//System.out.println("\n".repeat(1));
 		System.out.println("\n  --- Cadastrar Atração ---  \n");
 		System.out.println("Digite o id da Atração: ");
 		atracao.setId(sc.nextInt());
@@ -32,11 +36,11 @@ import models.CategoriaAtracao;
 		atracao.setValor(sc.nextDouble());
 		System.out.println("Digite o número da categoria da Atrações: ");
 		Listar.renderizarCategoriaAtracao();
-		categoriaAtracao = CategoriaAtracaoController.getCategoriaAtracao(sc.nextInt());
+		categoriaAtracao = categoriaAtracaoController.getCategoriaAtracao(sc.nextInt());
 			if(categoriaAtracao != null) {
 				atracao.setCategoriaAtracao(categoriaAtracao);
-				if(AtracaoController.cadastrar(atracao)) {
-					System.out.println("\n --- Atração cadastrada com sucesso! ---");
+				if(atracaoController.cadastrar(atracao)) {
+					System.out.println("\n --- Atração cadastrada com sucesso! :) ---");
 				} else {
 					System.out.println("\n --- Atração já existente! ---");
 				}

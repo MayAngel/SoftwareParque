@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 import controllers.VendaIngressoController;
 import controllers.AtracaoController;
-import controllers.VisitantesController;
+import controllers.VisitanteController;
 import controllers.ParqueController;
 import models.Ingresso;
 import models.Atracao;
@@ -18,6 +18,10 @@ import models.Parque;
 public class CadastrarVendaIngresso {
 
 	private static Scanner sc = new Scanner(System.in);
+	private static VendaIngressoController controller = VendaIngressoController.retornarInstancia();
+	private static AtracaoController atracaoController = AtracaoController.retornarInstancia();
+	private static ParqueController parqueController = ParqueController.retornarInstancia();
+	private static VisitanteController visitanteController = VisitanteController.retornarInstancia();
 	private static Ingresso ingresso;
 	private static Visitante visitante;
 	private static Parque parque;
@@ -33,7 +37,7 @@ public class CadastrarVendaIngresso {
 
 		System.out.println("Digite o número do visitante: ");
 		Listar.renderizarVisitante();
-		visitante = VisitantesController.getVisitante(sc.nextInt());
+		visitante = visitanteController.getVisitante(sc.nextInt());
 		if (visitante != null) {
 			ingresso.setVisitante(visitante);
 		} else {
@@ -43,7 +47,7 @@ public class CadastrarVendaIngresso {
 
 		System.out.println("Digite o número do parque: ");
 		Listar.renderizarParque();
-		parque = ParqueController.getParque(sc.nextInt());
+		parque = parqueController.getParque(sc.nextInt());
 		if (parque != null) {
 			ingresso.setParque(parque);
 		} else {
@@ -58,7 +62,7 @@ public class CadastrarVendaIngresso {
 
 				System.out.println("Digite o número da atração: ");
 				Listar.renderizarAtracao();
-				atracao = AtracaoController.getAtracao(sc.nextInt());
+				atracao = atracaoController.getAtracao(sc.nextInt());
 
 				if (atracao != null) {
 					atracoes.add(atracao);
@@ -89,7 +93,7 @@ public class CadastrarVendaIngresso {
 		ingresso.setAtracoes(atracoes);
 
 		if (visitante != null && parque != null && atracoes.size()>0) {
-			if (VendaIngressoController.cadastrar(ingresso)) {
+			if (controller.cadastrar(ingresso)) {
 				System.out.println("\n --- Ingresso cadastrado com sucesso! ---");
 			} else {
 				System.out.println(" --- Esse ingresso já existe! ---");

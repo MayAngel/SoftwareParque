@@ -1,19 +1,29 @@
 package controllers;
 
 import java.util.ArrayList;
+
+import Interfaces.IParque;
 import models.Parque;
 
-public class ParqueController {
-	
+public class ParqueController implements IParque{
+	//Singleton
+			private static ParqueController controller;	
+			public static  ParqueController retornarInstancia() {
+				if(controller  == null) {
+					controller = new ParqueController();
+				}
+				return controller;
+			}
 	private static Parque objeto;
-	
-	private static ArrayList<Parque> parques = new ArrayList<Parque>();
+	private ArrayList<Parque> parques = new ArrayList<Parque>();
 
-	public static ArrayList<Parque> listar() {
+	@Override
+	public ArrayList<Parque> listar() {
 		return parques;
 	}
-	
-	public static boolean cadastrar(Parque parque) {
+
+	@Override
+	public boolean cadastrar(Parque parque) {
 		for (Parque parqueCadastrado : parques) {
 			if(parqueCadastrado.getCnpj().equals(parque.getCnpj())) {
 				return false;
@@ -22,8 +32,9 @@ public class ParqueController {
 		parques.add(parque);
 		return true;
 	}
-	
-	public static Parque getParque(int id) {
+
+	@Override
+	public Parque getParque(int id) {
 		for (Parque idParque : parques) {
 			if(idParque.getId() == id) {
 				objeto = idParque;
@@ -33,5 +44,6 @@ public class ParqueController {
 		}	
 		return objeto;
 	}
+
 	
 }

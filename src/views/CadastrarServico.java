@@ -10,12 +10,13 @@ public class CadastrarServico {
 	private static Servico servico;
 	private static Parque parque;
 	private static Scanner sc = new Scanner(System.in);
+	private static ParqueController parqueController = ParqueController.retornarInstancia();
 
 	
 	
 	public static void renderizar() {
 		servico = new Servico();
-		System.out.println("\n".repeat(2));
+		System.out.println("\n".repeat(1));
 		System.out.println("\n  --- Cadastrar Serviço ---  \n");
 		System.out.println("Digite o id do serviço: ");
 		servico.setId(sc.nextInt());
@@ -27,7 +28,7 @@ public class CadastrarServico {
 		servico.setDescricao(sc.next());
 		System.out.println("Digite o número do parque: ");
 		Listar.renderizarParque();
-		parque = ParqueController.getParque(sc.nextInt());
+		parque = parqueController.getParque(sc.nextInt());
 			if(parque != null) {
 				servico.setParque(parque);
 				if(ServicoController.cadastrar(servico)) {
