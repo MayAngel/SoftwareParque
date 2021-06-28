@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import controllers.ParqueController;
 import models.Parque;
+import utils.Console;
 
 public class CadastrarParque {
 	
@@ -15,8 +16,7 @@ public class CadastrarParque {
 		parque = new Parque();
 		System.out.println("\n".repeat(1));
 		System.out.println("\n  --- Cadastrar Parque ---  \n");
-		System.out.println("Digite o id: ");
-		parque.setId(sc.nextInt());
+		parque.setId(Console.lerInteiro("Digite o id: "));
 		System.out.println("Digite o nome do parque: ");	
 		parque.setNome(sc.next());	
 		System.out.println("Digite o CNPJ do parque: ");	
@@ -24,7 +24,7 @@ public class CadastrarParque {
 		System.out.println("Digite o endereço: ");
 		parque.setEndereco(sc.next());
 		System.out.println("Digite o telefone: ");
-		parque.setTelefone(sc.nextInt());
+		parque.setTelefone(Console.lerInteiro("Digite o telefone: "));
 		System.out.println("Digite o email: ");
 		parque.setEmail(sc.next());
 		System.out.println("Digite o site: ");

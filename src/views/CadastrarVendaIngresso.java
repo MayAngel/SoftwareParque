@@ -13,6 +13,7 @@ import controllers.ParqueController;
 import models.Ingresso;
 import models.Atracao;
 import models.Visitante;
+import utils.Console;
 import models.Parque;
 
 public class CadastrarVendaIngresso {
@@ -35,9 +36,8 @@ public class CadastrarVendaIngresso {
 //		System.out.println("Digite o QR Code do ingresso: ");
 //		ingresso.setQRCode(sc.nextInt());
 
-		System.out.println("Digite o número do visitante: ");
 		Listar.renderizarVisitante();
-		visitante = visitanteController.getVisitante(sc.nextInt());
+		visitante = visitanteController.getVisitante(Console.lerInteiro("Digite o número do visitante: "));
 		if (visitante != null) {
 			ingresso.setVisitante(visitante);
 		} else {
@@ -45,9 +45,8 @@ public class CadastrarVendaIngresso {
 			System.out.println("\n --- Não será possivel concluir a compra do ingresso!!! --- ");
 		}
 
-		System.out.println("Digite o número do parque: ");
 		Listar.renderizarParque();
-		parque = parqueController.getParque(sc.nextInt());
+		parque = parqueController.getParque(Console.lerInteiro("Digite o número do parque: "));
 		if (parque != null) {
 			ingresso.setParque(parque);
 		} else {
@@ -62,7 +61,7 @@ public class CadastrarVendaIngresso {
 
 				System.out.println("Digite o número da atração: ");
 				Listar.renderizarAtracao();
-				atracao = atracaoController.getAtracao(sc.nextInt());
+				atracao = atracaoController.getAtracao(Console.lerInteiro("Digite o número da atração: "));
 
 				if (atracao != null) {
 					atracoes.add(atracao);

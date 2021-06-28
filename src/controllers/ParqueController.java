@@ -43,7 +43,5 @@ public class ParqueController implements IParque{
 			}
 		}	
 		return objeto;
-	}
-
-	
+	}	
 }

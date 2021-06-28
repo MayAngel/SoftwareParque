@@ -5,6 +5,7 @@ import controllers.ParqueController;
 import controllers.ServicoController;
 import models.Servico;
 import models.Parque;
+import utils.Console;
 public class CadastrarServico {
 
 	private static Servico servico;
@@ -18,17 +19,15 @@ public class CadastrarServico {
 		servico = new Servico();
 		System.out.println("\n".repeat(1));
 		System.out.println("\n  --- Cadastrar Serviço ---  \n");
-		System.out.println("Digite o id do serviço: ");
-		servico.setId(sc.nextInt());
+		servico.setId(Console.lerInteiro("Digite o id do serviço: "));
 		System.out.println("Digite o tipo do serviço: ");	
 		servico.setTipo(sc.next());
 		System.out.println("Digite o nome do serviço: ");	
 		servico.setNome(sc.next());		
 		System.out.println("Digite a descrição do serviço: ");
 		servico.setDescricao(sc.next());
-		System.out.println("Digite o número do parque: ");
 		Listar.renderizarParque();
-		parque = parqueController.getParque(sc.nextInt());
+		parque = parqueController.getParque(Console.lerInteiro("Digite o número do parque: "));
 			if(parque != null) {
 				servico.setParque(parque);
 				if(ServicoController.cadastrar(servico)) {
