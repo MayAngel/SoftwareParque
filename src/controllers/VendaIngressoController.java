@@ -2,12 +2,10 @@ package controllers;
 
 import java.util.ArrayList;
 import java.util.Random;
-
-import Interfaces.IIngresso;
 import models.Atracao;
 import models.Ingresso;
 
-public class VendaIngressoController implements IIngresso{
+public class VendaIngressoController {
 	
 	//Singleton
 		private static VendaIngressoController controller;	
@@ -20,7 +18,6 @@ public class VendaIngressoController implements IIngresso{
 		
 	private ArrayList<Ingresso> vendas = new ArrayList<Ingresso>();
 	
-	@Override
 	public boolean cadastrar(Ingresso venda) {
 		venda.setValorIngresso(gerarValorIngresso(venda));
 		venda.setId(gerarQrCodeIngresso(venda));
@@ -29,7 +26,6 @@ public class VendaIngressoController implements IIngresso{
 		return true;
 	}
 
-	@Override
 	public float gerarValorIngresso(Ingresso ingresso) {
 		float valor=0;
 		for (Atracao atracao : ingresso.getAtracoes()) {
@@ -38,13 +34,11 @@ public class VendaIngressoController implements IIngresso{
 		return valor;
 	}
 
-	@Override
 	public int gerarQrCodeIngresso(Ingresso ingresso) {
 		Random gerador = new Random();
 		return  gerador.nextInt(1000000);
 	}
 
-	@Override
 	public ArrayList<Ingresso> listar() {
 		return vendas;
 	}	

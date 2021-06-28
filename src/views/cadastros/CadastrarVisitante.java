@@ -1,15 +1,16 @@
-package views;
+package views.cadastros;
 
 import java.util.Scanner;
-import controllers.VisitanteController;
+
+import controllers.OriginController;
 import models.Visitante;
-import utils.Console;
+import util.Console;
 
 	public class CadastrarVisitante {
 		
 	private static Visitante visitante;
 	private static Scanner sc = new Scanner(System.in);
-	private static VisitanteController visitanteController = VisitanteController.retornarInstancia();
+	private static OriginController originController = OriginController.retornarInstancia();
 			
 	public static void renderizar() {
 		visitante = new Visitante();
@@ -32,7 +33,7 @@ import utils.Console;
 		System.out.println("Digite o email do visitante: ");
 		visitante.setEmail(sc.next());
 		
-		if(visitanteController.cadastrar(visitante)) {
+		if(originController.cadastrar(visitante)) {
 			System.out.println("\n --- Visitante cadastrado com sucesso! ---");
 		} else {
 			System.out.println(" --- Esse visitante já existe! ---");

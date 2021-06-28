@@ -1,6 +1,12 @@
 package views;
 
-import utils.Console;
+import util.Console;
+import views.cadastros.CadastrarAtracao;
+import views.cadastros.CadastrarCategoriaAtracao;
+import views.cadastros.CadastrarParque;
+import views.cadastros.CadastrarServico;
+import views.cadastros.CadastrarVendaIngresso;
+import views.cadastros.CadastrarVisitante;
 
 public class Principal {
 	

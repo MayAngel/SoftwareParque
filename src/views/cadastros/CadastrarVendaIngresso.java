@@ -1,25 +1,22 @@
-package views;
+package views.cadastros;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import controllers.VendaIngressoController;
-import controllers.AtracaoController;
-import controllers.VisitanteController;
-import controllers.ParqueController;
+import controllers.OriginController;
 import models.Ingresso;
 import models.Atracao;
 import models.Visitante;
-import utils.Console;
+import util.Console;
+import views.Listar;
 import models.Parque;
 
 public class CadastrarVendaIngresso {
 
 	private static Scanner sc = new Scanner(System.in);
 	private static VendaIngressoController controller = VendaIngressoController.retornarInstancia();
-	private static AtracaoController atracaoController = AtracaoController.retornarInstancia();
-	private static ParqueController parqueController = ParqueController.retornarInstancia();
-	private static VisitanteController visitanteController = VisitanteController.retornarInstancia();
+	private static OriginController originController = OriginController.retornarInstancia();
 	private static Ingresso ingresso;
 	private static Visitante visitante;
 	private static Parque parque;
@@ -34,7 +31,7 @@ public class CadastrarVendaIngresso {
 //		ingresso.setQRCode(sc.nextInt());
 
 		Listar.renderizarVisitante();
-		visitante = visitanteController.getVisitante(Console.lerInteiro("Digite o número do visitante: "));
+		visitante = originController.getVisitante(Console.lerInteiro("Digite o número do visitante: "));
 		if (visitante != null) {
 			ingresso.setVisitante(visitante);
 		} else {
@@ -43,7 +40,7 @@ public class CadastrarVendaIngresso {
 		}
 
 		Listar.renderizarParque();
-		parque = parqueController.getParque(Console.lerInteiro("Digite o número do parque: "));
+		parque = originController.getParque(Console.lerInteiro("Digite o número do parque: "));
 		if (parque != null) {
 			ingresso.setParque(parque);
 		} else {
@@ -58,7 +55,7 @@ public class CadastrarVendaIngresso {
 
 				System.out.println("Digite o número da atração: ");
 				Listar.renderizarAtracao();
-				atracao = atracaoController.getAtracao(Console.lerInteiro("Digite o número da atração: "));
+				atracao = originController.getAtracao(Console.lerInteiro("Digite o número da atração: "));
 
 				if (atracao != null) {
 					atracoes.add(atracao);
