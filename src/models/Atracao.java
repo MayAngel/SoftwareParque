@@ -1,34 +1,11 @@
 package models;
-import java.util.Date;
 
-public class Atracao {
-	
-	public Atracao() {
-		this.criadoEm = new Date();
-	}
-	
-	private int id;
-	private int idadeMinima;
+public class Atracao extends Restricoes {
+
 	private double alturaMinima;
 	private double valor;
-	private String nome;
-	private String descricao;
-	private String restricao;
 	private CategoriaAtracao CategoriaAtracao;
-	private Date criadoEm;
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getIdadeMinima() {
-		return idadeMinima;
-	}
-	public void setIdadeMinima(int idadeMinima) {
-		this.idadeMinima = idadeMinima;
-	}
+
 	public double getAlturaMinima() {
 		return alturaMinima;
 	}
@@ -41,40 +18,16 @@ public class Atracao {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	public String getRestricao() {
-		return restricao;
-	}
-	public void setRestricao(String restricao) {
-		this.restricao = restricao;
-	}
 	public CategoriaAtracao getCategoriaAtracao() {
 		return CategoriaAtracao;
 	}
 	public void setCategoriaAtracao(CategoriaAtracao categoriaAtracao) {
 		CategoriaAtracao = categoriaAtracao;
 	}
-	public Date getCriadoEm() {
-		return criadoEm;
-	}
-	public void setCriadoEm(Date criadoEm) {
-		this.criadoEm = criadoEm;
-	}
 	
 	@Override
 	public String toString() {
-		return getId() + " - " + getNome();
+		return super.toString() + " | Altura Mínima: " + getAlturaMinima() + " | Valor R$: " + getValor();
 	}
 	
 }

@@ -1,26 +1,14 @@
 package models;
 import java.util.ArrayList;
-import java.util.Date;
 
-public class Ingresso {
+public class Ingresso extends Origin {
 	
-	public Ingresso() {
-		this.criadoEm = new Date();
-	}
-	
-	private int QRCode;
 	private float valorIngresso;
 	private Visitante visitante;
 	private ArrayList<Atracao> atracoes;
 	private Parque parque;
-	private Date criadoEm;
 	
-	public int getQRCode() {
-		return QRCode;
-	}
-	public void setQRCode(int qRCode) {
-		QRCode = qRCode;
-	}
+	
 	public float getValorIngresso() {
 		return valorIngresso;
 	}
@@ -46,16 +34,11 @@ public class Ingresso {
 	public void setParque(Parque parque) {
 		this.parque = parque;
 	}
-	public Date getCriadoEm() {
-		return criadoEm;
-	}
-	public void setCriadoEm(Date criadoEm) {
-		this.criadoEm = criadoEm;
-	}
+	
 
 	@Override
 	public String toString() {
-		return " | QR : " + getQRCode() + " | Valor do Ingresso: R$" + getValorIngresso() + " | Visitante: " + getVisitante() + 
-			   " | Lista de Atrações:" + getAtracoes() + " | Parque: " + getParque() + "| Criado em: " + getCriadoEm();
+		return super.toString() + " | Valor do Ingresso: R$" + getValorIngresso() + " | Visitante: " + getVisitante() + 
+			   " | Lista de Atrações:" + getAtracoes() + " | Parque: " + getParque();
 	}
 }

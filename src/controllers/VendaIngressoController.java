@@ -23,7 +23,7 @@ public class VendaIngressoController implements IIngresso{
 	@Override
 	public boolean cadastrar(Ingresso venda) {
 		venda.setValorIngresso(gerarValorIngresso(venda));
-		venda.setQRCode(gerarQrCodeIngresso(venda));
+		venda.setId(gerarQrCodeIngresso(venda));
 		
 		vendas.add(venda);
 		return true;

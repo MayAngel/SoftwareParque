@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import Interfaces.IAtracao;
 import models.Atracao;
-import models.Ingresso;
 
 public class AtracaoController implements IAtracao{
 	
