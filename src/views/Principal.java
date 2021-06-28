@@ -2,6 +2,8 @@ package views;
 
 import java.util.Scanner;
 
+import utils.Console;
+
 public class Principal {
 	
 	public static void main(String[] args) {
@@ -13,8 +15,7 @@ public class Principal {
 	 Menu menu = new Menu();
 	 do {
 		menu.exibirMenu();		 
-		System.out.println(" Digite a opção desejada: ");
-		opcao = sc.nextInt();		
+		opcao = Console.lerInteiro(" Digite a opção desejada: ");		
 	
 		switch (opcao) {
 		case 1: 

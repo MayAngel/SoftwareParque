@@ -3,6 +3,7 @@ package views;
 import java.util.Scanner;
 import controllers.VisitanteController;
 import models.Visitante;
+import utils.Console;
 
 	public class CadastrarVisitante {
 		
@@ -14,14 +15,12 @@ import models.Visitante;
 		visitante = new Visitante();
 		System.out.println("\n".repeat(2));
 		System.out.println("\n  --- Cadastrar Visitante ---  \n");
-		System.out.println("Digite o id do visitante: ");
-		visitante.setId(sc.nextInt());
+		visitante.setId(Console.lerInteiro("Digite o id do visitante: "));
 		System.out.println("Digite o nome do visitante: ");	
 		visitante.setNome(sc.next());	
 		System.out.println("Digite o Cpf do visitante: ");	
 		visitante.setCpf(sc.next());
-		System.out.println("Digite a idade do visitante: ");
-		visitante.setIdade(sc.nextInt());
+		visitante.setIdade(Console.lerInteiro("Digite a idade do visitante: "));
 		System.out.println("Digite a altura do visitante: ");
 		visitante.setAltura(sc.nextDouble());
 		System.out.println("Digite o peso do visitante: ");

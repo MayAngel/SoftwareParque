@@ -1,11 +1,13 @@
 package views;
 
+
 import java.util.Scanner;
 import controllers.AtracaoController;
 import controllers.CategoriaAtracaoController;
 import controllers.VendaIngressoController;
 import models.Atracao;
 import models.CategoriaAtracao;
+import utils.Console;
 
 	public class CadastrarAtracao {
 		
@@ -21,22 +23,21 @@ import models.CategoriaAtracao;
 		//System.out.println("\n".repeat(1));
 		System.out.println("\n  --- Cadastrar Atração ---  \n");
 		System.out.println("Digite o id da Atração: ");
-		atracao.setId(sc.nextInt());
+		atracao.setId(Console.lerInteiro("Digite o id da Atração: "));
 		System.out.println("Digite o nome da Atração: ");	
 		atracao.setNome(sc.next());	
 		System.out.println("Digite a descrição da Atração: ");	
 		atracao.setDescricao(sc.next());
 		System.out.println("Digite a idade mínima da Atração: ");
-		atracao.setIdadeMinima(sc.nextInt());
+		atracao.setIdadeMinima(Console.lerInteiro("Digite a idade mínima da Atração: "));
 		System.out.println("Digite a altura mínima da Atração: ");
 		atracao.setAlturaMinima(sc.nextDouble());
 		System.out.println("Digite a retrição da Atração: ");
 		atracao.setRestricao(sc.next());
 		System.out.println("Digite o valor da Atração: ");
 		atracao.setValor(sc.nextDouble());
-		System.out.println("Digite o número da categoria da Atrações: ");
 		Listar.renderizarCategoriaAtracao();
-		categoriaAtracao = categoriaAtracaoController.getCategoriaAtracao(sc.nextInt());
+		categoriaAtracao = categoriaAtracaoController.getCategoriaAtracao(Console.lerInteiro("Digite o número da categoria da Atrações: "));
 			if(categoriaAtracao != null) {
 				atracao.setCategoriaAtracao(categoriaAtracao);
 				if(atracaoController.cadastrar(atracao)) {

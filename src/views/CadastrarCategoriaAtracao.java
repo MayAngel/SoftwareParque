@@ -7,6 +7,7 @@ import controllers.AtracaoController;
 import controllers.CategoriaAtracaoController;
 import models.CategoriaAtracao;
 import models.Parque;
+import utils.Console;
 
 public class CadastrarCategoriaAtracao {
 	
@@ -22,18 +23,17 @@ public class CadastrarCategoriaAtracao {
 		System.out.println("\n".repeat(1));
 		System.out.println("\n  --- Cadastrar Categoria de Atrações ---  \n");
 		System.out.println("Digite o id da Categoria: ");
-		categoriaAtracao.setId(sc.nextInt());
+		categoriaAtracao.setId(Console.lerInteiro("Digite o id da Categoria: "));
 		System.out.println("Digite o nome da categoria: ");	
 		categoriaAtracao.setNome(sc.next());	
 		System.out.println("Digite a descrição da categoria: ");	
 		categoriaAtracao.setDescricao(sc.next());
 		System.out.println("Digite a idade mínima para utilização nessa categoria: ");
-		categoriaAtracao.setIdadeMinima(sc.nextInt());
+		categoriaAtracao.setIdadeMinima(Console.lerInteiro("Digite a idade mínima para utilização nessa categoria: "));
 		System.out.println("Digite a restrição da categoria(restrições físicas): ");
 		categoriaAtracao.setRestricao(sc.next());
-		System.out.println("Digite o número do parque: ");
 		Listar.renderizarParque();
-		parque = parqueController.getParque(sc.nextInt());
+			parque = parqueController.getParque(Console.lerInteiro("Digite o número do parque: "));
 			if(parque != null) {
 				categoriaAtracao.setParque(parque);
 				if(categoriaAtracaoController.cadastrar(categoriaAtracao)) {
