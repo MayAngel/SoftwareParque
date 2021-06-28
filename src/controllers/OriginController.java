@@ -48,7 +48,5 @@ public class OriginController implements IOrigin {
 	}
 	public Visitante getVisitante(int lerInteiro) {
 		return null;
-	}
-	
-	
+	}	
 }

@@ -4,7 +4,7 @@ public class Menu {
 	public void exibirMenu(){
 		//System.out.println("\n");
 		System.out.println("+--------------------------------------+");
-		System.out.println("|       PARQUE DE DIVERSÕES            |");
+		System.out.println("|       PARQUES DE DIVERSÕES           |");
 		System.out.println("|      SISTEMA DE GERENCIAMENTO        |");
 		System.out.println("|       ***    MENU    ***             |");       
 		System.out.println("+--------------------------------------+");
