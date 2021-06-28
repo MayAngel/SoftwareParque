@@ -28,7 +28,7 @@ import utils.Console;
 		System.out.println("Digite o endereço do visitante: ");
 		visitante.setEndereco(sc.next());
 		System.out.println("Digite o telefone do visitante: ");
-		visitante.setTelefone(sc.next());
+		visitante.setTelefone(sc.nextInt());
 		System.out.println("Digite o email do visitante: ");
 		visitante.setEmail(sc.next());
 		

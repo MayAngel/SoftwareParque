@@ -3,7 +3,7 @@ package models;
 public abstract class Endereços extends Nome{
 	
 	private String endereco;
-	private String telefone;
+	private int telefone;
 	private String email;
 	
 	public String getEndereco() {
@@ -12,10 +12,10 @@ public abstract class Endereços extends Nome{
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	public String getTelefone() {
+	public int getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(String telefone) {
+	public void setTelefone(int telefone) {
 		this.telefone = telefone;
 	}
 	public String getEmail() {

@@ -1,15 +1,10 @@
 package views;
 
-import java.util.Scanner;
-
 import utils.Console;
 
 public class Principal {
 	
 	public static void main(String[] args) {
-	@SuppressWarnings("resource")
-	Scanner sc = new Scanner(System.in);
-	
 		
 	int opcao;
 	 Menu menu = new Menu();

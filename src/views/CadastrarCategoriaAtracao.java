@@ -3,7 +3,6 @@ package views;
 import java.util.Scanner;
 
 import controllers.ParqueController;
-import controllers.AtracaoController;
 import controllers.CategoriaAtracaoController;
 import models.CategoriaAtracao;
 import models.Parque;
@@ -29,7 +28,7 @@ public class CadastrarCategoriaAtracao {
 		System.out.println("Digite a descrição da categoria: ");	
 		categoriaAtracao.setDescricao(sc.next());
 		System.out.println("Digite a idade mínima para utilização nessa categoria: ");
-		categoriaAtracao.setIdadeMinima(Console.lerInteiro("Digite a idade mínima para utilização nessa categoria: "));
+		categoriaAtracao.setIdadeMin(Console.lerInteiro("Digite a idade mínima para utilização nessa categoria: "));
 		System.out.println("Digite a restrição da categoria(restrições físicas): ");
 		categoriaAtracao.setRestricao(sc.next());
 		Listar.renderizarParque();
