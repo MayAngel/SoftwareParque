@@ -3,6 +3,7 @@ package models;
 public class Atracao extends Restricoes {
 
 	private double alturaMinima;
+	private double idadeMin;
 	private double valor;
 	private CategoriaAtracao CategoriaAtracao;
 
@@ -11,6 +12,12 @@ public class Atracao extends Restricoes {
 	}
 	public void setAlturaMinima(double alturaMinima) {
 		this.alturaMinima = alturaMinima;
+	}
+	public double getIdadeMin() {
+		return idadeMin;
+	}
+	public void setIdadeMin(double idadeMin) {
+		this.idadeMin = idadeMin;
 	}
 	public double getValor() {
 		return valor;
@@ -27,7 +34,7 @@ public class Atracao extends Restricoes {
 	
 	@Override
 	public String toString() {
-		return super.toString() + " | Altura Mínima: " + getAlturaMinima() + " | Valor R$: " + getValor();
+		return super.toString() + " | Altura Mínima: " + getAlturaMinima() + " | Altura Mínima: " + getIdadeMin() + " | Valor R$: " + getValor();
 	}
 	
 }

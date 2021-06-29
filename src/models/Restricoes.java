@@ -1,26 +1,26 @@
 package models;
 
-public abstract class Restricoes extends Descricao{
+public abstract class Restricoes extends Nome {
 	
-	private int idadeMin;
 	private String restricao;
+	private String descricao;
 	
-	public int getIdadeMin() {
-		return idadeMin;
-	}
-	public void setIdadeMin(int idadeMin) {
-		this.idadeMin = idadeMin;
-	}
 	public String getRestricao() {
 		return restricao;
 	}
 	public void setRestricao(String restricao) {
 		this.restricao = restricao;
 	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 	
 	@Override
 	public String toString() {
-		return super.toString() + " | Idade Mínima: " + getIdadeMin() + " | Restrição: " + getRestricao();
+		return super.toString() + " | Restrição: " + getRestricao() + " | Descrição: " + getDescricao();
 	}
 
 }

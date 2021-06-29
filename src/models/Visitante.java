@@ -1,6 +1,6 @@
 package models;
 
-public class Visitante extends Endereços {
+public class Visitante extends Nome {
 
 	private int idade;
 	private double altura;

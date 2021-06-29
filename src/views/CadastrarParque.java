@@ -1,4 +1,4 @@
-package views.cadastros;
+package views;
 
 import java.util.Scanner;
 
@@ -20,15 +20,7 @@ public class CadastrarParque {
 		System.out.println("Digite o nome do parque: ");	
 		parque.setNome(sc.next());	
 		System.out.println("Digite o CNPJ do parque: ");	
-		parque.setCnpj(sc.next());
-		System.out.println("Digite o endereço: ");
-		parque.setEndereco(sc.next());
-		parque.setTelefone(Console.lerInteiro("Digite o telefone: "));
-		System.out.println("Digite o email: ");
-		parque.setEmail(sc.next());
-		System.out.println("Digite o site: ");
-		parque.setSite(sc.next());
-		
+		parque.setCnpj(sc.next());		
 		
 		if(originController.cadastrar(parque)) {
 			System.out.println("\n ---Parque cadastrado com sucesso!!! ---");

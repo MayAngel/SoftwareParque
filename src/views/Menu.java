@@ -12,11 +12,9 @@ public class Menu {
 			"|  1 --Cadastro do Parque--            |\n" +
 			"|  2 --Cadastro Categoria de Atração-- |\n" +
 			"|  3 --Cadastro de Atração--           |\n" +
-			"|  4 --Cadastro de Serviços--          |\n" +
-			"|  5 --Cadastro de Visitante--	       |\n" +
-			"|  6 --Venda de Ingresso--   	       |\n" +
-			"|  7 --Imprimir ingresso--             |\n" +
-			"|  8 --Relatório Operacional por dia-- |\n" +
+			"|  4 --Cadastro de Visitante--	       |\n" +
+			"|  5 --Venda de Ingresso--   	       |\n" +
+			"|  6 --Imprimir ingresso--             |\n" +
 			"|  0 --sair--                          |"
 		);
 		System.out.println("+--------------------------------------+\n");

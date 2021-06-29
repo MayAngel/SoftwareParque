@@ -2,7 +2,6 @@ package controllers;
 
 import java.util.ArrayList;
 
-import Interface.IOrigin;
 import models.Atracao;
 import models.CategoriaAtracao;
 import models.Origin;
@@ -35,6 +34,16 @@ public class OriginController implements IOrigin {
 		}
 		origins.add(origin);
 		return true;
+	}
+	
+	@Override
+	public Origin buscarPorId(int id) {
+		for (Origin originCadastrada : origins) {
+			if(originCadastrada.getId() == id) {
+				return originCadastrada;
+			}
+		}
+		return null;
 	}
 	
 	public Atracao getAtracao(int lerInteiro) {

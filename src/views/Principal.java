@@ -1,12 +1,6 @@
 package views;
 
 import util.Console;
-import views.cadastros.CadastrarAtracao;
-import views.cadastros.CadastrarCategoriaAtracao;
-import views.cadastros.CadastrarParque;
-import views.cadastros.CadastrarServico;
-import views.cadastros.CadastrarVendaIngresso;
-import views.cadastros.CadastrarVisitante;
 
 public class Principal {
 	
@@ -30,20 +24,14 @@ public class Principal {
 			CadastrarAtracao.renderizar();			
 			break;
 		case 4: 	
-			CadastrarServico.renderizar();
+			CadastrarVisitante.renderizar();
 			break;
 		case 5: 	
-			CadastrarVisitante.renderizar();			
+			CadastrarVendaIngresso.renderizar();			
 			break;				
 		case 6: 
-			CadastrarVendaIngresso.renderizar();
+			ImprimirIngresso.renderizar();
 			break;			
-		case 7: 	
-			ImprimirIngresso.renderizar();
-			break;
-		case 8: 	
-			ImprimirIngresso.renderizar();
-			break;
 		default:
 			System.out.println(opcao);		
 		break; 

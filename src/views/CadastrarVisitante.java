@@ -1,4 +1,4 @@
-package views.cadastros;
+package views;
 
 import java.util.Scanner;
 
@@ -26,12 +26,6 @@ import util.Console;
 		visitante.setAltura(sc.nextDouble());
 		System.out.println("Digite o peso do visitante: ");
 		visitante.setPeso(sc.nextDouble());
-		System.out.println("Digite o endereço do visitante: ");
-		visitante.setEndereco(sc.next());
-		System.out.println("Digite o telefone do visitante: ");
-		visitante.setTelefone(sc.nextInt());
-		System.out.println("Digite o email do visitante: ");
-		visitante.setEmail(sc.next());
 		
 		if(originController.cadastrar(visitante)) {
 			System.out.println("\n --- Visitante cadastrado com sucesso! ---");

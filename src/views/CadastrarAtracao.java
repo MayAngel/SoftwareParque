@@ -1,4 +1,4 @@
-package views.cadastros;
+package views;
 
 
 import java.util.Scanner;
@@ -6,14 +6,14 @@ import controllers.OriginController;
 import models.Atracao;
 import models.CategoriaAtracao;
 import util.Console;
-import views.Listar;
 
 	public class CadastrarAtracao {
 		
+	private static int categoriaAtracaoId;	
 	private static CategoriaAtracao categoriaAtracao;
 	private static Atracao atracao;
 	private static Scanner sc = new Scanner(System.in);
-	private static OriginController originController = OriginController.retornarInstancia();	
+	private static OriginController controller = OriginController.retornarInstancia();	
 	
 	public static void renderizar() {
 		atracao = new Atracao();
@@ -31,10 +31,11 @@ import views.Listar;
 		System.out.println("Digite o valor da Atração: ");
 		atracao.setValor(sc.nextDouble());
 		Listar.renderizarCategoriaAtracao();
-		categoriaAtracao = originController.getCategoriaAtracao(Console.lerInteiro("Digite o número da categoria da Atrações: "));
+		categoriaAtracaoId = Console.lerInteiro("Digite o número da categoria da Atrações: ");
+		categoriaAtracao = (CategoriaAtracao) controller.buscarPorId (categoriaAtracaoId);
 			if(categoriaAtracao != null) {
 				atracao.setCategoriaAtracao(categoriaAtracao);
-				if(originController.cadastrar(atracao)) {
+				if(controller.cadastrar(atracao)) {
 					System.out.println("\n --- Atração cadastrada com sucesso! :) ---");
 				} else {
 					System.out.println("\n --- Atração já existente! ---");

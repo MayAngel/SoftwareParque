@@ -29,7 +29,7 @@ public abstract class Origin {
 	
 	@Override
 	public String toString() {
-		return "Criado em: " + getCriadoEm() + " | Id: " + getId();
+		return " | Id: " + getId();
 	}
 
 }

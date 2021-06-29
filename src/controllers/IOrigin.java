@@ -1,4 +1,4 @@
-package Interface;
+package controllers;
 
 import java.util.ArrayList;
 
@@ -8,5 +8,6 @@ public interface IOrigin {
 	
 	public ArrayList<Origin> listar();
 	public boolean cadastrar(Origin origin);
+	public Origin buscarPorId(int id);
 
 }

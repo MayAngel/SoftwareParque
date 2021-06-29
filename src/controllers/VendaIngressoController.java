@@ -29,7 +29,7 @@ public class VendaIngressoController {
 	public float gerarValorIngresso(Ingresso ingresso) {
 		float valor=0;
 		for (Atracao atracao : ingresso.getAtracoes()) {
-			valor = (float) (valor + atracao.getValor());			
+			valor = (float) (valor + atracao.getValor());
 		}
 		return valor;
 	}
