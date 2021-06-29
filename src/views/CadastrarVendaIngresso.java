@@ -45,14 +45,16 @@ public class CadastrarVendaIngresso {
 						atracaoId = Console.lerInteiro("Digite o número da atração: ");
 						atracao = (Atracao) controller.buscarPorId (atracaoId);
 						if (atracao != null) {
-							if(atracao.getIdadeMin() >= visitante.getIdade()) {
-								if (atracao.getAlturaMinima() >= visitante.getAltura()) {
-									atracoes.add(atracao);
+							if (visitante.getId() == visitanteId) {
+								if(atracao.getIdadeMin() < visitante.getIdade()) {
+									if (atracao.getAlturaMinima() < visitante.getAltura()) {
+								 		atracoes.add(atracao);
+									} else {
+										System.out.println("\n --- Você não tem altura suficiente para essa atração! --- ");
+									}
 								} else {
-									System.out.println("\n --- Você não tem altura suficiente para essa atração! --- ");
+									System.out.println("\n --- Você não tem idade suficiente para essa atração! --- ");
 								}
-							} else {
-								System.out.println("\n --- Você não tem idade suficiente para essa atração! --- ");
 							}
 						} else {
 							System.out.println("\n --- Essa atração não existe! --- ");
@@ -61,9 +63,12 @@ public class CadastrarVendaIngresso {
 						System.out.println("Deseja incluir mais atrações neste Ingresso?");
 						System.out.println("1 - SIM");
 						System.out.println("2 - NÃO");
-		
-						if (sc.nextInt() == 2) {
-							cadastrarNovasAtracoes = false;
+						System.out.println("0 - SAIR");
+						
+						if (sc.nextInt() == 0) {
+							break;
+						} else if (sc.nextInt() == 2) {
+								cadastrarNovasAtracoes = false;
 						}
 		
 					} catch (Exception e) {

@@ -34,7 +34,7 @@ public class Atracao extends Restricoes {
 	
 	@Override
 	public String toString() {
-		return super.toString() + " | Altura Mínima: " + getAlturaMinima() + " | Altura Mínima: " + getIdadeMin() + " | Valor R$: " + getValor();
+		return super.toString() + " | Altura Mínima: " + getAlturaMinima() + " | Idade Mínima: " + getIdadeMin() + " | Valor R$: " + getValor();
 	}
 	
 }
